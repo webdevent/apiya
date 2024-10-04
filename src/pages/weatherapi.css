@@ -1,0 +1,36 @@
+.weather-api {
+    padding: 10px;
+}
+
+.states {
+    color: white;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.weather-icon {
+    width: 300px;
+    height: 300px;
+    border-radius: 30px;
+    margin: auto;
+}
+.weather-display {
+    background: linear-gradient(45deg,rgba(0, 255, 255, 0.601), rgba(0, 0, 255, 0.497), rgba(238, 130, 238, 0.705));
+    padding: 10px;
+    border-radius: 20px;
+    width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+}
+
+.sub-conditions {
+    display: flex;
+    justify-content: space-between;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 10px;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}

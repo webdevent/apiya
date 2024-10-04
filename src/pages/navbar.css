@@ -1,0 +1,30 @@
+.navbar {
+    background: url(./pictures/banner.jpeg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 10px;
+}
+
+.routes {
+    list-style: none;
+    font-weight: bolder;
+}
+
+.routes li {
+    font-size: 20px;
+}
+
+.routes li a {
+    color: white;
+    text-decoration: none;
+}
+
+.routes li a:hover {
+    font-size: 22px;
+}
+

@@ -1,0 +1,110 @@
+.movies-api {
+    padding: 10px;
+    background: linear-gradient(rgba(0, 0, 0, 0.541), rgba(0, 0, 0, 0.607)), url(./pictures/posters.jpg);
+}
+
+.subtitle {
+    font-size: 20px;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.movie-poster {
+    width: 400px;
+    height: 500px;
+}
+
+.info-int {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.movie-display {
+    display: none;
+    gap: 10px;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 10px;
+    background: rgba(45, 45, 45, 0.756);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.searchbar {
+    border: 3px solid white;
+    border-radius: 20px;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.29);
+}
+
+#input {
+    width: 500px;
+    font-size: 18px;
+    padding: 3px;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    background: transparent;
+}
+
+#input:focus {
+    border: none;
+    outline: 0;
+}
+
+.year-int {
+    width: 100px;
+    height: 20px;
+    font-size: 18px;
+    padding: 3px;
+    color: white;
+    font-weight: bold;
+    border: 3px solid white;
+    border-radius: 30px;
+    padding: 5px;
+    background: transparent;
+}
+.sendbtn {
+    border: none;
+    background: none;
+    font-size: 20px;
+    color: white;
+    transition: all 1s ease-in-out;
+}
+
+.sendbtn:hover {
+    font-size: 22px;
+    color: rgb(17, 17, 255);
+}
+
+
+
+.sendbtn:focus {
+    outline: 0;
+    border: none;
+}
+
+.description {
+    font-size: 20px;
+}
+
+@media (max-width: 700px) {
+    .movie-display {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .movie-poster {
+        width: 350px;
+    }
+
+    #input {
+        width: 250px;
+    }
+}
