@@ -1,8 +1,8 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import MovieapiImage from './pictures/posters.jpg'
-import PokeapiImage from './pictures/pokeposter.webp'
-import WeatherapiImage from './pictures/weather.avif'
+import MovieapiImage from '../pictures/posters.jpg'
+import PokeapiImage from '../pictures/pokeposter.webp'
+import WeatherapiImage from '../pictures/weather.avif'
 import "./Welcome.css"
 const Welcome = () => {
   return (

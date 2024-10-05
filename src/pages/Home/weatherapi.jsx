@@ -1,11 +1,11 @@
 import React, {useRef} from 'react'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import {faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons"
-import cloudsImage from "./pictures/clouds.png"
-import stormImage from "./pictures/storm.png"
-import sunnyImage  from "./pictures/sunny.png"
-import rainyImage from "./pictures/rainy.png"
-import snowyImage from "./pictures/snowing.png"
+import cloudsImage from "../pictures/clouds.png"
+import stormImage from "../pictures/storm.png"
+import sunnyImage  from "../pictures/sunny.png"
+import rainyImage from "../pictures/rainy.png"
+import snowyImage from "../pictures/snowing.png"
 import "./weatherapi.css"
 
 const Weatherapi = () => {
@@ -37,9 +37,6 @@ const Weatherapi = () => {
                     break;
                 case   "Clear":
                     imageRef.current.src = sunnyImage;
-                    break;
-                case   "Drizzle":
-                    imageRef.current.src = './pictures/posters.jpg';
                     break;
                 case    "Thunderstorm":
                     imageRef.current.src = stormImage;

@@ -1,6 +1,6 @@
 .movies-api {
     padding: 10px;
-    background: linear-gradient(rgba(0, 0, 0, 0.541), rgba(0, 0, 0, 0.607)), url(./pictures/posters.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.541), rgba(0, 0, 0, 0.607)), url(../pictures/posters.jpg);
 }
 
 .subtitle {

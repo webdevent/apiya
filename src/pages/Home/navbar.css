@@ -1,5 +1,5 @@
 .navbar {
-    background: url(./pictures/banner.jpeg);
+    background: url(../pictures/banner.jpeg);
     background-size: cover;
     background-position: center;
     display: flex;
