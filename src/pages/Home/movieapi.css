@@ -26,6 +26,31 @@
     gap: 10px;
 }
 
+.movie-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+    padding: 0px;
+    list-style: none;
+}
+
+.movie-card {
+    border: none;
+    padding: 0px;
+    width: 390px;
+    height: 500px;
+    padding: 5px;
+}
+
+.movie-card:hover {
+    border: 1px solid white;
+    background-color: rgba(0, 0, 0, 0.404);
+}
+
+.movie-poster {
+    width: 100%;
+}
 .details {
     display: flex;
     flex-direction: column;
@@ -106,5 +131,13 @@
 
     #input {
         width: 250px;
+    }
+
+    .info-int {
+        flex-direction: column;
+    }
+
+    .searchbar {
+        width: fit-content;
     }
 }

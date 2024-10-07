@@ -18,7 +18,7 @@
     background: linear-gradient(45deg,rgba(0, 255, 255, 0.601), rgba(0, 0, 255, 0.497), rgba(238, 130, 238, 0.705));
     padding: 10px;
     border-radius: 20px;
-    width: 500px;
+    width: 550px;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -28,9 +28,19 @@
 .sub-conditions {
     display: flex;
     justify-content: space-between;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: bold;
     padding: 10px;
     color: white;
     font-family: 'Courier New', Courier, monospace;
+}
+
+@media (max-width: 700px) {
+    .weather-display {
+        width: 300px;
+    }
+    .sub-conditions {
+        font-size: 20px;
+        flex-wrap: wrap;
+    }
 }

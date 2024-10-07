@@ -6,6 +6,7 @@ import stormImage from "../pictures/storm.png"
 import sunnyImage  from "../pictures/sunny.png"
 import rainyImage from "../pictures/rainy.png"
 import snowyImage from "../pictures/snowing.png"
+import mistImage from "../pictures/mist.png"
 import "./weatherapi.css"
 
 const Weatherapi = () => {
@@ -17,14 +18,15 @@ const Weatherapi = () => {
 
 
     async function checkWeather() {
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?units=metric&q=${input.value}&appid=91c7f3413f4a542d17a8b390c9b2108e`)
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?units=metric&q=${searchInput.current.value}&appid=91c7f3413f4a542d17a8b390c9b2108e`)
         const data = await response.json()
         if(response.status == 404) { 
             window.alert("Please enter a valid city")
         } else {
+            console.log(data)
             stateRef.current.innerHTML = `${data.name}`
-            tempRef.current.innerHTML = `${data.main.temp}°C`
-            windRef.current.innerHTML = `${data.wind.speed}km/h`
+            tempRef.current.innerHTML = `Temp:${data.main.temp}°C`
+            windRef.current.innerHTML = `Wind Speed:${data.wind.speed}km/h`
             switch(data.weather[0].main) {
                 case "Rain":
                     imageRef.current.src = rainyImage;
@@ -34,12 +36,17 @@ const Weatherapi = () => {
                     break;
                 case  "Clouds":
                     imageRef.current.src = cloudsImage;
+                    console.log('cloud')
                     break;
                 case   "Clear":
                     imageRef.current.src = sunnyImage;
                     break;
                 case    "Thunderstorm":
                     imageRef.current.src = stormImage;
+                    break;
+                case "Mist":
+                    imageRef.current.src = mistImage;
+                    console.log('mist')
                     break;
                 case "sunny":
                     imageRef.current.src = sunnyImage;
@@ -53,7 +60,7 @@ const Weatherapi = () => {
       <h1 className="subtitle">Welcome to Weather</h1>
       <div className="info-int">
         <div className="searchbar">
-            <input type='text' id='input'/>
+            <input type='text' id='input' ref={searchInput}/>
             <button className='sendbtn'onClick={checkWeather}>
                 <FontAwesomeIcon icon={faMagnifyingGlass} />
             </button>

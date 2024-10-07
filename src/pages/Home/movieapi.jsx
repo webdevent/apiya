@@ -1,18 +1,37 @@
-import React, {useRef, useState} from 'react'
+import React, {useRef, useState, useEffect} from 'react'
 import "./movieapi.css"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import {faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons"
 const Movieapi = () => {
-  const titleRef = useRef()
-  const yearRef = useRef()
-  const detailRef = useRef()
-  const durationRef = useRef()
-  const imageRef = useRef()
-  const inputRef = useRef()
-  const yearIntRef = useRef()
-  const movieDisplayRef = useRef()
+  const [movies, setMovies]  = useState([]);
+  const titleRef = useRef();
+  const yearRef = useRef();
+  const detailRef = useRef();
+  const durationRef = useRef();
+  const imageRef = useRef();
+  const inputRef = useRef();
+  const yearIntRef = useRef();
+  const movieDisplayRef = useRef();
   
-  async function checkMovie(selected) {
+  useEffect(() => {
+    fetchMovies()
+  }, [movies])
+
+  const fetchMovies = async () => {
+    const options = {
+      method: 'GET',
+      headers: {
+        accept: 'application/json',
+        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiZWUxZWZjN2M4OGU2Nzg0NDdiOTAyYzFjODI4MjU3NSIsIm5iZiI6MTcyODIyNzY0MS41MTgwMzUsInN1YiI6IjY2YTU2MWQ3NmVmOGZmODg5YmI0Yzg0MSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.K4LTbgRYFNDUXkGmBiV0Uych4BboYPObQvsCAMoXfF0'
+      }
+    };
+    
+    const response = await fetch('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc', options)
+    const data = await response.json();
+    setMovies(data.results); 
+  }
+
+  async function checkMovie() {
       const response = await fetch(`http://www.omdbapi.com/?t=${inputRef.current.value}&y=${yearIntRef.current.value}&apikey=279ca011`)
       const data = await response.json()
       if(data.Response == "False") {
@@ -49,6 +68,19 @@ const Movieapi = () => {
           <p className="description" ref={detailRef}></p>
           <span className="credits">The api used was taken from <a href="https://www.omdbapi.com/">OMDB API</a></span>
         </div>
+      </div>
+      <div className="movie-listing">
+            <h2 className="subtitle">Top movie picks this year</h2>
+            <ul className="movie-list">
+              {movies.map((movie, index) => {
+                  return (
+                    <li key={index} className='movie-card'>
+                      <img src={`https://image.tmdb.org/t/p/w1280${movie.poster_path}`} className="movie-poster"/>
+                      <h2 className="subtitle">{movie.title}</h2>
+                    </li>
+                  )
+              })}
+            </ul>
       </div>
     </div>
   )
